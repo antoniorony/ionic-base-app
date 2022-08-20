@@ -5,7 +5,7 @@
         <ion-buttons slot="start">
           <ion-menu-button color="primary"></ion-menu-button>
         </ion-buttons>
-        <ion-title>{{ $route.params.id }}</ion-title>
+        <ion-title>Receitas</ion-title>
       </ion-toolbar>
     </ion-header>
     
@@ -15,6 +15,11 @@
           <ion-title size="large">{{ $route.params.id }}</ion-title>
         </ion-toolbar>
       </ion-header>
+        <ion-fab vertical="center" horizontal="center" slot="fixed">
+        <ion-fab-button>
+            <ion-icon :icon="add"></ion-icon>
+        </ion-fab-button>
+        </ion-fab>
         <div>
             <item-list-vue
                 listColor="success"
@@ -32,6 +37,8 @@
                 valor="500,34"
             ></item-list-vue>
         </div>
+        
+        
     </ion-content>
   </ion-page>
 </template>
@@ -39,6 +46,8 @@
 <script>
 import { defineComponent } from 'vue';
 import { IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
+import { IonFab, IonFabButton } from '@ionic/vue';
+import { add } from 'ionicons/icons';
 import ItemListVue from '../componets/ItemsList/ItemList.vue';
 
 export default defineComponent({
@@ -51,7 +60,14 @@ export default defineComponent({
         IonPage,
         IonTitle,
         IonToolbar,
+        IonFab,
+        IonFabButton,
         ItemListVue,
+    },
+    setup() {
+        return {
+            add,
+        }
     }
 })
 </script>
