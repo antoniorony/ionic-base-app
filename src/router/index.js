@@ -3,6 +3,11 @@ import { createRouter, createWebHistory } from '@ionic/vue-router';
 
 const routes = [
   {
+    path: '/',
+    component: () => import ('../views/Home.vue')
+    //redirect: '/folder/Inbox'
+  },
+  {
     path: '/page/:id',
     component: () => import ('../views/Home.vue')
     //redirect: '/folder/Inbox'
