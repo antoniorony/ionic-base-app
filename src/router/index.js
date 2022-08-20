@@ -10,7 +10,12 @@ const routes = [
   {
     path: '/folder/:id',
     component: () => import ('../views/FolderPage.vue')
-  }
+  },
+  {
+    path: '/page/receitas',
+    component: () => import ('../views/pages/Receitas.vue')
+    //redirect: '/folder/Inbox'
+  },
 ]
 
 const router = createRouter({
