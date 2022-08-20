@@ -13,6 +13,7 @@
           listSlot="start"
           titulo="Receitas"
           valor="5.750,33"
+          listRouter="/page/receitas"
         ></item-list-vue>
 
         <item-list-vue
