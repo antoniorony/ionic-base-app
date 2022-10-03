@@ -23,6 +23,7 @@
           listSlot="start"
           titulo="Despesas"
           valor="2.752,33"
+          listRouter="/page/despesas"
         ></item-list-vue>
 
         <item-list-vue
@@ -32,6 +33,7 @@
           listSlot="start"
           titulo="Restante"
           valor="2.997,34"
+          listRouter="/page/restante"
         ></item-list-vue>
     </ion-card-content>
   </ion-card>
