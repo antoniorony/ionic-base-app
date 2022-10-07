@@ -2,7 +2,9 @@
 
     <ion-item>
         <ion-button v-bind:shape="listShape" v-bind:color="listColor"  v-bind:slot="listSlot"
-          @click="() => router.push(listRouter)"
+          @click="() => { 
+            router.push(listRouter);
+          }"
         >
         <ion-icon v-bind:src="listIcon" v-bind:slot="listSlot"></ion-icon>
         <ion-label>{{ titulo }}</ion-label>

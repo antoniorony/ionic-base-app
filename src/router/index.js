@@ -4,7 +4,7 @@ import { createRouter, createWebHistory } from '@ionic/vue-router';
 const routes = [
   {
     path: '/',
-    component: () => import ('../views/Home.vue')
+    component: () => import ('../views/Index.vue')
     //redirect: '/folder/Inbox'
   },
   {
@@ -19,6 +19,21 @@ const routes = [
   {
     path: '/page/receitas',
     component: () => import ('../views/pages/Receitas.vue')
+    //redirect: '/folder/Inbox'
+  },
+  {
+    path: '/page/despesas',
+    component: () => import ('../views/pages/Despesas.vue')
+    //redirect: '/folder/Inbox'
+  },
+  {
+    path: '/page/restante',
+    component: () => import ('../views/pages/Restante.vue')
+    //redirect: '/folder/Inbox'
+  },
+  {
+    path: '/page/adiciona',
+    component: () => import ('../views/pages/ADicionaItem.vue')
     //redirect: '/folder/Inbox'
   },
 ]
