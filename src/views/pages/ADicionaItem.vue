@@ -19,11 +19,22 @@
         </ion-header>
           <ion-fab vertical="center" horizontal="center" slot="fixed">
           </ion-fab>
-          <div>
+          <div class="margem-topo">
+            <ion-item>
+                <ion-label position="floating">Descrição</ion-label>
+                <ion-input formControlName="descricao" type="text"></ion-input>
+            </ion-item>
             <ion-item>
                 <ion-label position="floating">Valor</ion-label>
                 <ion-input formControlName="valor" type="number"></ion-input>
             </ion-item>
+            <ion-item>
+                <ion-label position="floating">Data</ion-label>
+                <ion-input formControlName="descricao" type="date"></ion-input>
+            </ion-item>
+            <ion-button class="button-left">
+                <ion-label>Adicionar</ion-label>
+            </ion-button>
           </div>        
       </ion-content>
     </ion-page>
@@ -60,6 +71,15 @@
   })
   </script>
   
-  <style lang="scss" scoped>
-  
+  <style lang="css" scoped>
+    .button-left {
+      max-width: 200px;
+      display: flex;
+      float: right;
+      margin-right: 15px;
+    }
+
+    .margem-topo {
+      margin-top: 25px;
+    }
   </style>
