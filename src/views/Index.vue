@@ -42,12 +42,15 @@ export default defineComponent({
 </script>
 
 <style lang="css" scoped>
+
+  ion-content{
+    --background: var(--ion-background-color, #eb445a);
+  }
     .centraliza {
         padding: 20px;
         margin-top: 20%;
         margin-left: 10%;
         margin-right: 10%;
-        background-color: rgb(49, 49, 104);
         color: aliceblue;
         min-height: 100px;
     }

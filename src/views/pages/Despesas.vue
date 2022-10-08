@@ -18,7 +18,11 @@
         </ion-toolbar>
       </ion-header>
         <ion-fab vertical="center" horizontal="center" slot="fixed">
-        <ion-fab-button>
+        <ion-fab-button
+          @click="() => { 
+              router.push('/page/adiciona');
+            }"
+        >
             <ion-icon :icon="add"></ion-icon>
         </ion-fab-button>
         </ion-fab>

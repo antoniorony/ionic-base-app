@@ -4,8 +4,8 @@
       <ion-menu content-id="main-content" type="overlay">
         <ion-content>
           <ion-list id="inbox-list">
-            <ion-list-header>Inbox</ion-list-header>
-            <ion-note>hi@ionicframework.com</ion-note>
+            <ion-list-header>FinEasy</ion-list-header>
+            <ion-note>antoniorony2013@gmail.com.br</ion-note>
   
             <ion-menu-toggle auto-hide="false" v-for="(p, i) in appPages" :key="i">
               <ion-item @click="selectedIndex = i" router-direction="root" :router-link="p.url" lines="none" detail="false" class="hydrated" :class="{ selected: selectedIndex === i }">
@@ -15,26 +15,29 @@
             </ion-menu-toggle>
           </ion-list>
   
-          <ion-list id="labels-list">
+         <!-- <ion-list id="labels-list">
             <ion-list-header>Labels</ion-list-header>
   
             <ion-item v-for="(label, index) in labels" lines="none" :key="index">
               <ion-icon slot="start" :ios="bookmarkOutline" :md="bookmarkSharp"></ion-icon>
               <ion-label>{{ label }}</ion-label>
             </ion-item>
-          </ion-list>
+          </ion-list>-->
         </ion-content>
       </ion-menu>
       <ion-router-outlet id="main-content"></ion-router-outlet>
     </ion-split-pane>
+    <ion-footer class="footer">
+      <div>Antonio Rony dev. 2022</div>    
+    </ion-footer>
   </ion-app>
 </template>
 
 <script>
-import { IonApp, IonContent, IonIcon, IonItem, IonLabel, IonList, IonListHeader, IonMenu, IonMenuToggle, IonNote, IonRouterOutlet, IonSplitPane } from '@ionic/vue';
+import { IonApp, IonContent, IonIcon, IonItem, /*ionLabel,*/ IonList, IonListHeader, IonMenu, IonMenuToggle, IonNote, IonRouterOutlet, IonSplitPane } from '@ionic/vue';
 import { defineComponent, ref } from 'vue';
 import { useRoute } from 'vue-router';
-import { archiveOutline, archiveSharp, bookmarkOutline, bookmarkSharp, heartOutline, heartSharp, mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, trashOutline, trashSharp, warningOutline, warningSharp } from 'ionicons/icons';
+import { archiveOutline, archiveSharp, bookmarkOutline, bookmarkSharp, heartOutline, heartSharp, home, homeSharp, mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, statsChart, trashOutline, trashSharp, warningOutline, warningSharp } from 'ionicons/icons';
 //import { Home } from './views/Home.vue';
 
 export default defineComponent({
@@ -44,7 +47,7 @@ export default defineComponent({
     IonContent, 
     IonIcon, 
     IonItem, 
-    IonLabel, 
+    //IonLabel, 
     IonList, 
     IonListHeader, 
     IonMenu, 
@@ -56,44 +59,20 @@ export default defineComponent({
   setup() {
     const selectedIndex = ref(0);
     const appPages = [
+    {
+        title: 'Inicio',
+        url: '/',
+        iosIcon: home,
+        mdIcon: homeSharp,
+      },
       {
-        title: 'Entrada',
+        title: 'Resumo',
         url: '/page/Home',
-        iosIcon: mailOutline,
-        mdIcon: mailSharp,
-      },
-      {
-        title: 'Outbox',
-        url: '/folder/Outbox',
-        iosIcon: paperPlaneOutline,
-        mdIcon: paperPlaneSharp
-      },
-      {
-        title: 'Favorites',
-        url: '/folder/Favorites',
-        iosIcon: heartOutline,
-        mdIcon: heartSharp
-      },
-      {
-        title: 'Archived',
-        url: '/folder/Archived',
-        iosIcon: archiveOutline,
-        mdIcon: archiveSharp
-      },
-      {
-        title: 'Trash',
-        url: '/folder/Trash',
-        iosIcon: trashOutline,
-        mdIcon: trashSharp
-      },
-      {
-        title: 'Spam',
-        url: '/folder/Spam',
-        iosIcon: warningOutline,
-        mdIcon: warningSharp
+        iosIcon: statsChart,
+        mdIcon: statsChart,
       }
     ];
-    const labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
+    //const labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
     
     const path = window.location.pathname.split('page/')[1];
     if (path !== undefined) {
@@ -105,7 +84,7 @@ export default defineComponent({
     return { 
       selectedIndex,
       appPages, 
-      labels,
+      //labels,
       archiveOutline, 
       archiveSharp, 
       bookmarkOutline, 
@@ -127,6 +106,7 @@ export default defineComponent({
 </script>
 
 <style scoped>
+
 ion-menu ion-content {
   --background: var(--ion-item-background, var(--ion-background-color, #fff));
 }
@@ -246,4 +226,19 @@ ion-note {
 ion-item.selected {
   --color: var(--ion-color-primary);
 }
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  color: #eb445a;
+  text-align: center;
+}
+
+.background-page {
+  background-color: #eb445a;
+}
+
 </style>
