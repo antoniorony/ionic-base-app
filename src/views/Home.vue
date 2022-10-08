@@ -42,6 +42,8 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss" scoped>
-
+<style lang="css" scoped>
+  ion-content{
+     --background: var(--ion-background-color, #eb445a);
+  }
 </style>
